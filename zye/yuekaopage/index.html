@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta http - equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 750 * 100 + 'px';
+    </script>
+    <div class="wrap">
+        <header>
+            <span>北京</span>
+            <b>假日旅行</b>
+            <span>北京</span>
+        </header>
+        <section>
+            <div class="ban swiper-container">
+                <ul class="list swiper-wrapper">
+                    <li class='swiper-slide'><img src="img/pic1.png" alt=""></li>
+                    <li class='swiper-slide'><img src="img/pic1.png" alt=""></li>
+                    <li class='swiper-slide'><img src="img/pic1.png" alt=""></li>
+                </ul>
+                <div class="page-icon swiper-pagination"></div>
+            </div>
+            <div class="total">
+                <div class="cont">
+                    <div class="loading">上拉加载····</div>
+                    <!-- <dl>
+                        <dt>
+                        <img src="img/pic2.png" alt="">
+                    </dt>
+                        <dd>
+                            <div class="left">
+                                <h3>北京首都机场国际酒店</h3>
+                                <p class="app">
+                                    <span>限时抢购</span>
+                                    <em>￥268元<i>起</i></em>
+                    </p>
+                    <span class='span'>4.3分<em>四星级</em></span>
+                    <p class='air'>
+                        <span>首都国际机场、新国展</span>
+                        <span>23.2公里</span>
+                    </p>
+                </div>
+                <div class="rig">
+                    >
+                </div>
+                </dd>
+                </dl> -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src='js/swiper-3.4.2.min.js'></script>
+    <script src='js/jquery-1.11.1.min.js'></script>
+    <script src='js/bscroll.min.js'></script>
+    <script>
+        var header = document.querySelector('header');
+        var span = header.querySelectorAll('span')[0];
+        span.onclick = function() {
+            var str1 = '';
+            var mark = document.createElement('div');
+            mark.classList.add('active');
+            document.body.appendChild(mark);
+            $.ajax({
+                url: 'js/list.json',
+                success: function(data) {
+                    data.data.map(function(v, i) {
+                        str1 += `<div class='mark'>
+                        <header>
+                            <span><</span>
+                            <b>${v.con}</b>
+                            <span>></span>
+                        </header>
+                        <div class='totals'>
+                            <div class="inp">
+                                <input type="text" placeholder="输入城市名">
+                            </div>
+                            <div class="main">
+                                <p class="app">
+                                    <span>当前城市</span>
+                                    <em class='p1'>正在定位中···</em>
+                                </p>
+                                <div class="content">
+                                    <div class="left1">
+                                        <p>热门</p>
+                                        <ul class="test">
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="right1">
+                                        <ol class="txt">
+                                            
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                    });
+                }
+            });
+            mark.append(str1);
+            $.ajax({
+                url: 'js/list.json',
+                success: function(data) {
+                    console.log(data.ul);
+                    init(data.ul, data.ol);
+                }
+            });
+
+            function init(dataul, dataol) {
+                var html = '';
+                dataul.map(function(v, i) {
+                    html += `<li>${v}</li>`;
+                });
+            }
+        }
+
+
+        var img = document.querySelector('.ban img');
+        img.onclick = function() {
+            location.href = 'air.html';
+        }
+
+        new Swiper('.ban', {
+            autoplay: 2000,
+            pagination: ".swiper-pagination",
+            paginationType: "progress",
+            loop: true
+        });
+        var pagenum = 0,
+            limit = 20;
+        $.ajax({
+            url: 'js/data.json',
+            data: {
+                pageNum: pagenum,
+                limit: limit
+            },
+            success: function(data) {
+                init(data.data);
+            }
+        });
+
+        function init(data) {
+            var str = '';
+            data.map(function(v, i) {
+                str += `<dl class='dl'>
+                    <dt>
+                        <img src="${v.img}" alt="">
+                    </dt>
+                    <dd>
+                        <div class="left">
+                            <h3>${v.tit}</h3>
+                            <p class="app">
+                                <span>${v.cont}</span>
+                                <em>${v.num}<i>${v.i}</i></em>
+                            </p>
+                            <span class='span'>${v.fen}<em>${v.xing}</em></span>
+                            <p class='air'>
+                                <span>${v.shou}</span>
+                                <span>${v.long}</span>
+                            </p>
+                        </div>
+                        <div class="rig">
+                            >
+                        </div>
+                    </dd>
+                </dl> `;
+            });
+            $('.cont').append(str);
+            myscroll.refresh();
+        };
+        var myscroll = new BScroll('.total', {
+            probeType: 2
+        });
+        myscroll.on('scroll', function() {
+            var thisy = this.y,
+                maxy = this.maxScrollY;
+            if (thisy < maxy - 40) {
+                $('.loading').html('释放刷新');
+            } else if (thisy < maxy - 20) {
+                $('.loading').html('上拉刷新····');
+            }
+        });
+        myscroll.on('scrollEnd', function() {
+            $('.loading').html('上拉刷新····');
+        });
+        $('.total').on('touchend', function() {
+            var nowy = myscroll.y,
+                maxscrolly = myscroll.maxScrollY;
+            if ($('.loading').html('上拉刷新····') && nowy === maxscrolly) {
+                pagenum++;
+                $.ajax({
+                    url: 'js/data.json',
+                    data: {
+                        pageNum: pagenum,
+                        limit: limit
+                    },
+                    success: function(data) {
+                        init(data.data);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
