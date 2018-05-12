@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ImgObj(src) {
+            return new Promise(function(resolve, rejected) {
+                const imgs = new Image();
+                imgs.src = src;
+                imgs.onload = function() {
+                    resolve(imgs);
+                }
+                imgs.onerror = rejected;
+            });
+        }
+        var img = ImgObj('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526436293&di=7286dcd08607c29c9c43a84be17e5b7e&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F32fa828ba61ea8d3d8d6c33f9c0a304e251f5810.jpg');
+
+        img.then(function(img) {
+            console.log('cg', img)
+        }, function() {
+            console.log('sb')
+        })
+    </script>
+</body>
+
+</html>
