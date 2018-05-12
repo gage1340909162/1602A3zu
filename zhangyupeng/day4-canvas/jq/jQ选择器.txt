@@ -1,0 +1,92 @@
+
+
+一、基本选择器
+#id
+.class
+element
+*
+selector1, selector2...
+
+二、层次选择器
+父 子孙
+父>子
+哥+弟		next()
+哥~弟弟们	nextAll()
+
+
+三、过滤选择器
+a、基本过滤选择器
+$('div:first)
+$('div:last)
+$('div:not(.myClass))
+$('div:even) even（偶数）它找的是索引，索引从0开始，其实是我们人用的奇数
+$('div:odd) odd（奇数），其实是人用的偶数
+$('div:eq(index))，找下标，从0开始
+$('div:gt(index))，大于
+$('div:lt(index))，小于
+$(':header')
+$(':animated')
+$(':focus')
+
+b、内容过滤选择器
+$("div:contains('我')"); 选取含有文本"我"的div元素
+$("div:empty");选取不含有子元素（包括文本）的div空元素
+$("div:has(p)"); 选取含有p元素的div元素
+$("div:parent"); 选取拥有子元素(包含文本)的div元素
+
+c、可见性过滤选择器
+$(':hidden'); 选取所有不可见的元素
+$('div:visible'); 选取所有可见的div元素
+
+d、属性过滤选择器
+$('div[id]'); 选取拥有ID属性的div元素
+$('div[title=test]'); 选取属性title为test的div元素
+$('div[title!=test]'); 选取属性title不等于test的div元素
+$('div[title^=test]'); 选取属性title以test开始的div元素
+$('div[title*=test]'); 选取属性title包含test的div元素
+$('div[title$=test]'); 选取属性title以test结束的div元素
+
+e、子元素过滤选择器
+$('div :nth-child(even)'); 选取div下，索引为偶数的元素
+$('div :nth-child(odd)'); 选取div下，索引为奇数的元素
+$('div :nth-child(2)'); 选取div下，索引为2的元素
+$('div :nth-child(3n)'); 选取div下，索引为3的倍数的元素，n从1开始
+$('div :nth-child(3n+1)'); 选取div下，索引为3n+1的元素，n从1开始
+$('div :first-child'); 选取div下，第一个元素
+$('div :last-child'); 选取div下，最后一个元素
+$('div :only-child'); 选取div下，唯一的一个元素
+
+f、表单对象属性过滤选择器
+$('#form :enabled'); form表单内所有可用元素
+$('#form :disabled'); form表单内所有不可用元素
+$('#form input:checked'); form表单内所有被选中的input元素
+$('#form option:selected'); form表单内所有被选中的选项元素
+
+四、表单选择器
+:input	选取所有input textarea select button元素
+:text	单行文本框
+:password	密码框
+:radio		单选框
+:checkbox	复选框
+:submit		提交按钮
+:image		图像按钮
+:reset		重置按钮
+:button		所有的按钮
+:file		上传域
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

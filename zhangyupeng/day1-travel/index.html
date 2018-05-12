@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 750 * 100 + 'px'
+    </script>
+    <link rel="stylesheet" href="swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header><span>北京</span>
+            <h2>假日旅行</h2><span></span></header>
+
+        <main class="main">
+            <div class="ban swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="images/banpic1.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="images/banpic2.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="images/banpic3.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="images/banpic1.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="images/banpic3.jpg" alt=""></li>
+                </ul>
+                <ol class="swiper-pagination"></ol>
+            </div>
+            <dl>
+                <dt><img src="images/1.png" alt=""></dt>
+                <dd>
+                    <h3>北极首都机场国际酒店</h3>
+                    <p>
+                        <font>限时抢购</font><span>￥268起</span></p>
+                    <p><span>4.3分</span><i>wifi</i> P</p>
+                    <p>@ 首都机场、新国展<span>23.2公里</span></p>
+                </dd>
+                <span>&gt;</span>
+            </dl>
+            <dl>
+                <dt><img src="images/2.png" alt=""></dt>
+                <dd>
+                    <h3>北极首都机场国际酒店</h3>
+                    <p>
+                        <font>限时抢购</font><span>￥268起</span></p>
+                    <p><span>4.3分</span><i>wifi</i> P</p>
+                    <p>@ 首都机场、新国展<span>23.2公里</span></p>
+                </dd>
+                <span>&gt;</span>
+            </dl>
+            <dl>
+                <dt><img src="images/1.png" alt=""></dt>
+                <dd>
+                    <h3>北极首都机场国际酒店</h3>
+                    <p>
+                        <font>限时抢购</font><span>￥268起</span></p>
+                    <p><span>4.3分</span><i>wifi</i> P</p>
+                    <p>@ 首都机场、新国展<span>23.2公里</span></p>
+                </dd>
+                <span>&gt;</span>
+            </dl>
+            <dl>
+                <dt><img src="images/2.png" alt=""></dt>
+                <dd>
+                    <h3>北极首都机场国际酒店</h3>
+                    <p>
+                        <font>限时抢购</font><span>￥268起</span></p>
+                    <p><span>4.3分</span><i>wifi</i> P</p>
+                    <p>@ 首都机场、新国展<span>23.2公里</span></p>
+                </dd>
+                <span>&gt;</span>
+            </dl>
+        </main>
+    </div>
+    <script src="swiper/swiper.min.js"></script>
+    <script>
+        new Swiper('.ban', {
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        })
+    </script>
+</body>
+
+</html>
