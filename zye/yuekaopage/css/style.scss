@@ -1,0 +1,268 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    html,
+    body,
+    .wrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .mark {
+        width: 100%;
+        height: 100%;
+        background: #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        .totals {
+            width: 100%;
+            .inp {
+                width: 100%;
+                height: 1rem;
+                line-height: 1rem;
+                text-align: center;
+                padding: 0 .3rem;
+                input {
+                    width: 100%;
+                    background: #fff;
+                    height: .8rem;
+                }
+            }
+            .main {
+                width: 100%;
+                .app {
+                    width: 100%;
+                    height: 2rem;
+                    span {
+                        width: 90%;
+                        height: .6rem;
+                        line-height: .6rem;
+                        display: inline-block;
+                        font-size: .32rem;
+                        background: #ccc;
+                        padding-left: .2rem;
+                    }
+                    em {
+                        position: relative;
+                        top: -.4rem;
+                        width: 100%;
+                        height: 1.2rem;
+                        line-height: 1.2rem;
+                        display: inline-block;
+                        background: #fff;
+                        font-style: normal;
+                        font-size: .4rem;
+                        text-align: center;
+                    }
+                }
+                .content {
+                    width: 100%;
+                    background: #fff;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: .38rem;
+                    .left1 {
+                        flex: 1;
+                        p {
+                            width: 100%;
+                            height: .6rem;
+                            font-size: .32rem;
+                            padding-left: .3rem;
+                            line-height: .6rem;
+                            background: #ccc;
+                        }
+                        .test {
+                            width: 100%;
+                            li {
+                                width: 100%;
+                                height: 1rem;
+                                line-height: 1rem;
+                                border-bottom: 1px solid #ccc;
+                                font-size: .32rem;
+                                padding-left: .3rem;
+                            }
+                        }
+                    }
+                    .right1 {
+                        width: 50px;
+                        .txt {
+                            width: 50px;
+                            li {
+                                width: 50px;
+                                text-align: center;
+                                line-height: 26px;
+                                font-size: .3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    header {
+        width: 100%;
+        height: 1rem;
+        background: #46d264;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        span {
+            font-size: .32rem;
+            color: #fff;
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+        }
+        b {
+            font-size: .4rem;
+            color: #fff;
+        }
+    }
+    
+    section {
+        width: 100%;
+        overflow: hidden;
+        .ban {
+            width: 100%;
+            height: 2.8rem;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            // .page-icon.swiper-pagination {
+            //     position: absolute;
+            //     top: 2.8rem;
+            //     left: 0;
+            //     z-index: 99;
+            // }
+        }
+        .total {
+            width: 100%;
+            margin-top: .3rem;
+            overflow: hidden;
+            height: 10rem;
+            .cont {
+                width: 100%;
+                position: relative;
+                .loading {
+                    width: 100%;
+                    height: 1rem;
+                    line-height: 1rem;
+                    position: absolute;
+                    bottom: -1rem;
+                    left: 0;
+                    text-align: center;
+                    font-size: .36rem;
+                }
+                dl {
+                    width: 100%;
+                    height: 2rem;
+                    display: flex;
+                    padding-left: .3rem;
+                    margin: .2rem 0;
+                    border-bottom: 1px solid #ccc;
+                    dt {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        padding-right: .2rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    dd {
+                        flex: 1;
+                        height: 2rem;
+                        display: flex;
+                        padding-right: .1rem;
+                        .left {
+                            width: 80%;
+                            height: 2rem;
+                            h3 {
+                                font-size: .34rem;
+                            }
+                            .app {
+                                margin-bottom: -.7rem;
+                                display: flex;
+                                justify-content: space-between;
+                                span {
+                                    font-size: .3rem;
+                                }
+                                em {
+                                    font-style: normal;
+                                    font-size: .3rem;
+                                    color: #f50;
+                                    i {
+                                        font-style: normal;
+                                        font-size: .3rem;
+                                        color: #ccc;
+                                    }
+                                }
+                            }
+                            .span {
+                                display: inline-block;
+                                font-size: .3rem;
+                                color: #ccc;
+                                em {
+                                    font-size: .3rem;
+                                    padding-left: .3rem;
+                                    font-style: normal;
+                                }
+                            }
+                            .air {
+                                width: 100%;
+                                display: flex;
+                                margin-top: -.2rem;
+                                justify-content: space-between;
+                                span {
+                                    color: #ccc;
+                                    font-size: .3rem;
+                                }
+                            }
+                        }
+                        .rig {
+                            font-family: "楷体";
+                            font-size: .5rem;
+                            font-weight: bold;
+                            margin-top: .6rem;
+                            padding-left: .3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @keyframes dong {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    .active {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        animation: dong 1s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
