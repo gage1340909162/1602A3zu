@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 750 * 100 + "px";
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="head">
+            <p><span class="active">大盘排片</span><span>城市排片</span></p>
+        </header>
+        <main class="main">
+            <nav class="nav">
+                <ul>
+                    <li>前一天</li>
+                    <li>2017年11月08日</li>
+                    <li>后一天</li>
+                </ul>
+                <ol>
+                    <li>全国</li>
+                    <li>全时段</li>
+                    <li>场次</li>
+                </ol>
+            </nav>
+            <h5 class="trend">排片趋势</h5>
+            <canvas class="bigCan"></canvas>
+            <table>
+                <thead>
+                    <tr>
+                        <td>影片</td>
+                        <td>场次占比</td>
+                        <td>场次</td>
+                        <td>票房(万)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>雷神·诸神黄昏</td>
+                        <td>43.2%</td>
+                        <td>103,489</td>
+                        <td>1102.34</td>
+                    </tr>
+                    <tr>
+                        <td>雷神·诸神黄昏</td>
+                        <td>43.2%</td>
+                        <td>103,489</td>
+                        <td>1102.34</td>
+                    </tr>
+                    <tr>
+                        <td>雷神·诸神黄昏</td>
+                        <td>43.2%</td>
+                        <td>103,489</td>
+                        <td>1102.34</td>
+                    </tr>
+                    <tr>
+                        <td>雷神·诸神黄昏</td>
+                        <td>43.2%</td>
+                        <td>103,489</td>
+                        <td>1102.34</td>
+                    </tr>
+                    <tr>
+                        <td>雷神·诸神黄昏</td>
+                        <td>43.2%</td>
+                        <td>103,489</td>
+                        <td>1102.34</td>
+                    </tr>
+                    <tr>
+                        <td>雷神·诸神黄昏</td>
+                        <td>43.2%</td>
+                        <td>103,489</td>
+                        <td>1102.34</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+<script>
+    var bCan = document.querySelector(".bigCan");
+    var bcxt = bCan.getContext('2d');
+    var main = document.querySelector(".main");
+    var deg = Math.PI / 180;
+    var arr = [{
+        radius: 160,
+        color: "blue"
+    }, {
+        radius: 40,
+        color: "#62d0f3"
+    }, {
+        radius: 40,
+        color: "#5cc2ac"
+    }, {
+        radius: 30,
+        color: "#6bd68e"
+    }, {
+        radius: 30,
+        color: "#b2e461"
+    }, {
+        radius: 20,
+        color: "#feec3a"
+    }, {
+        radius: 20,
+        color: "#fdaa40"
+    }, {
+        radius: 20,
+        color: "#fa777d"
+    }]
+    bCan.width = main.offsetWidth;
+    bCan.height = bCan.width - 50;
+    bcxt.translate(bCan.width / 2, bCan.height / 2);
+    var start = -90;
+    arr.forEach(function(val, i) {
+        bcxt.beginPath();
+        var end = start + val.radius;
+        bcxt.moveTo(0, 0);
+        bcxt.arc(0, 0, 100, start * deg, end * deg);
+        bcxt.fillStyle = val.color;
+        bcxt.fill();
+        start = end;
+    });
+    bcxt.beginPath();
+    bcxt.arc(0, 0, 50, 0, 360 * deg);
+    bcxt.fillStyle = "#fff";
+    bcxt.fill();
+    bcxt.beginPath();
+    bcxt.fillStyle = "#000";
+    bcxt.textAlign = "center";
+    bcxt.baseAlign = "middle";
+    bcxt.font = "20px bold";
+    bcxt.fillText("43.19%", 0, -10);
+    bcxt.beginPath();
+    bcxt.textAlign = "center";
+    bcxt.baseAlign = "top";
+    bcxt.font = "12px bold";
+    bcxt.fillText("雷神3·诸神黄昏", 0, 10);
+</script>
+
+</html>
