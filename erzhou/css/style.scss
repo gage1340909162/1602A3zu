@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+html,
+body,
+.wrap {
+    width: 100%;
+    height: 100%;
+    font-size: .32rem;
+}
+
+header {
+    width: 100%;
+    height: 1rem;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        padding-left: .3rem;
+        color: #fff;
+        font-size: .32rem;
+        &:nth-of-type(1) {
+            a {
+                text-decoration: none;
+                font-size: .45rem;
+                font-family: "楷体";
+                color: #fff;
+                padding-right: .1rem;
+            }
+        }
+        &:nth-of-type(2) {
+            padding-right: .3rem;
+            font-size: .5rem;
+        }
+    }
+    b {
+        font-size: .36rem;
+        font-weight: normal;
+        color: #fff;
+    }
+}
+
+section {
+    width: 100%;
+    .list {
+        width: 100%;
+        li {
+            widows: 100%;
+            height: .8rem;
+            border-bottom: 1px solid #eee;
+            &:nth-of-type(4) {
+                border-bottom: none;
+            }
+            font-size: .3rem;
+            line-height: .8rem;
+            padding-left: .3rem;
+            color:#424242;
+            &:nth-of-type(1) {
+                color: #fe8fb5;
+                em {
+                    width: .07rem;
+                    height: .32rem;
+                    display: inline-block;
+                    background: #fe8fb5;
+                    margin-right: .1rem;
+                }
+            }
+            &:nth-of-type(2) {
+                display: flex;
+                justify-content: space-between;
+                padding-right: .3rem;
+            }
+            &:nth-of-type(4) {
+                height: 2rem;
+                span {
+                    padding-left: .2rem;
+                    em {
+                        font-style: normal;
+                        color: #fe8fb5;
+                    }
+                }
+                .process {
+                    width: 100%;
+                    height: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    span {
+                        &:nth-of-type(1) {
+                            padding-left: .3rem;
+                        }
+                        &:nth-of-type(2) {
+                            padding-right: .3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cen {
+        width: 100%;
+        height: .6rem;
+        line-height: .6rem;
+        background: #eee;
+    }
+    .live {
+        padding-left: .3rem;
+        color: #424242;
+        width: 100%;
+        height: .8rem;
+        line-height: .8rem;
+        border-bottom: 1px solid #eee;
+    }
+    .massage {
+        width: 92%;
+        height: 3rem;
+        border-bottom: 1px solid #eee;
+        padding-left: .3rem;
+        padding-right: .3rem;
+        font-size: .3rem;
+        color: #424242;
+    }
+    .small {
+        width: 92%;
+        height: 1rem;
+        border-bottom: 1px solid #eee;
+        font-size: .2rem;
+        color: #424242;
+        padding: 0 .3rem;
+    }
+    .cont {
+        width: 100%;
+        text-align: center;
+        .ban {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            li {
+                width: 26%;
+                height: 1.8rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .bot {
+            width: 92%;
+            padding-left: .3rem;
+            font-size: .2rem;
+            color: #999;
+            margin-top: .5rem;
+        }
+        button {
+            width: 90%;
+            height: .7rem;
+            background: #fe8fb5;
+            color: #fff;
+            text-align: center;
+            line-height: .7rem;
+            border: 0;
+            border-radius: .2rem;
+            margin-top: .3rem;
+        }
+        .last {
+            width: 100%;
+            height: .8rem;
+            line-height: .8rem;
+            color: #999;
+            em {
+                width: .3rem;
+                height: .3rem;
+                text-align: center;
+                line-height: .3rem;
+                border: 1px solid #fe8fb5;
+                border-radius: 50%;
+                color: #fe8fb5;
+                display: inline-flex;
+                font-style: normal;
+                font-size: .3rem;
+            }
+        }
+    }
+}

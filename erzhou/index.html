@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta http - equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 750 * 100 + 'px';
+    </script>
+    <div class="wrap">
+        <header>
+            <span><a href="javascript"><</a>返回</span>
+            <b>爱心筹-发布</b>
+            <span>···</span>
+        </header>
+        <section>
+            <ul class="list">
+                <li><em></em>大病救助</li>
+                <li><span>目标金额&nbsp;&nbsp;&nbsp;&nbsp;170000.00</span><span>元</span></li>
+                <li>资金用途&nbsp;&nbsp;&nbsp;&nbsp;白血病治疗</li>
+                <li>
+                    截止日期<span>2016-08-10&nbsp;&nbsp;10:10&nbsp;&nbsp;共<em>10</em>天</span>
+                    <div class="process">
+                        <span>3天</span>
+                        <p class="app">
+                            <em></em>
+                            <span></span>
+                            <p class='jin'></p>
+                        </p>
+                        <span>30天</span>
+                    </div>
+                </li>
+            </ul>
+            <p class="cen"></p>
+            <p class='live'>
+                请救救我患白血病的女儿，她还想参加中考
+            </p>
+            <div class='massage'>
+                建议详细描述受助人的基本情况：如家庭背景、经济状 况、患病经历等。建议详细描述受助人的基本情况：如 家庭背景、经济状况、患病经历等。建议详细描述受助 人的基本情况：如家庭背景、经济状况、患病经历等。 建议详细描述受助人的基本情况：如家庭背景、经济状 况、患病经历等。
+            </div>
+            <div class="small">
+                项目内容和项目图片禁止透露任何联系方式和银行卡等收款信息，包括但不限于手机 号码、座机号码、微信号、支付宝账号、银行卡号等。违反以上规定，项目验证和提 现申请均不予通过。
+            </div>
+            <div class="cont">
+                <ol class="ban">
+                    <!-- <li><img src="img/pic1.jpg" alt=""></li>
+                    <li><img src="img/pic.jpg" alt=""></li>
+                    <li><img src="img/pic2.jpg" alt=""></li> -->
+                </ol>
+                <p class="bot">
+                    发起的大病救助项目，建议上传患者治疗中的照片、患者病前后生活对比、医院诊断 证明等照片，提高项目可信度。
+                </p>
+                <button>发布项目</button>
+                <p class="last">
+                    <em>!</em>项目一经发布，不可修改
+                </p>
+            </div>
+        </section>
+    </div>
+    <script src='./jquery.js'></script>
+    <script>
+        $.ajax({
+            url: '/page',
+            dataType: "json",
+            success: function(data) {
+                init(data.data);
+            }
+        });
+
+        function init(data) {
+            var html = '';
+            data.map(function(v, i) {
+                html += `<li><img src="${v.img}" alt=""></li>`;
+            });
+            $('.ban').append(html);
+        }
+    </script>
+</body>
+
+</html>

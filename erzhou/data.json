@@ -1,0 +1,11 @@
+{
+    "data": [{
+            "img": "img/pic1.jpg"
+        }, {
+            "img": "img/pic.jpg"
+        },
+        {
+            "img": "img/pic2.jpg"
+        }
+    ]
+}
